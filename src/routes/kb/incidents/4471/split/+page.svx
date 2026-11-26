@@ -1,0 +1,55 @@
+---
+layout: runbook
+title: '#4471 · what it shows'
+owner: harness (xollaborator)
+status: accepted
+reviewed: 2026-11-26
+signature: omp harness for xollaborator · S01E03
+---
+
+<script>
+  import CauseTable from '#lib/kb/CauseTable.svelte';
+  import SplitSummary from '#lib/kb/SplitSummary.svelte';
+  import Callout from '#lib/kb/Callout.svelte';
+  import RenderStamp from '#lib/kb/RenderStamp.svelte';
+</script>
+
+The [incident page](/kb/incidents/4471) says of #4471: *known, one issue, one fix queued.* We
+ran the desk's own components over the [export](https://github.com/xollaborator/mega.dev) the
+desk shipped on 2026-10-04. The ticket holds **two causes**, and intake's tags hid one of
+them. This page counts what the ticket actually shows; the numbers are computed from
+`reports-4471.json` at render time, not typed.
+
+<SplitSummary ticket={4471} />
+
+## The split
+
+<CauseTable ticket={4471} />
+
+Both causes put a booking on the wrong day, so the subjects match and [decision
+0001](/kb/decisions/0001-dedupe-by-subject) merges them into one ticket. The merge is cheap;
+the cost is the second reading, which nobody did until the components said so.
+
+## Tickets
+
+- **[parser · 379 reports](/kb/incidents/4471)** — the known issue, and #4471 stays its
+  ticket. Fix queued.
+- **[hint · 33 reports](https://github.com/xollaborator/mega.dev/issues/1)** — `booking-v3`
+  prints an `MM/DD/YYYY` hint under the date field; all three tenants on that form write the
+  day first. Their people type what the hint says; the form reads it the tenant's way. A
+  different bug, a different fix: the parser fix does not touch it.
+- **[intake tags · 38 reports](https://github.com/xollaborator/mega.dev/issues/2)** — 23
+  `parser` reports tagged `hint`, 15 `hint` reports tagged `parser`. `causes.ts` says the tag
+  is a guess; 38 of 412 guesses point the wrong way, and the guess is how one cause stayed
+  inside the other's ticket.
+
+<Callout>
+Merging by subject is right and stays. But a merged ticket is not one bug. Before you write
+"one issue, one fix queued", run the causes, not the subjects.
+</Callout>
+
+The desk keeps working while pages are written: counts here are as of the 2026-10-04 export
+snapshot. The 5 reports footnoted on the incident page as read as a one-day move all sit in
+`parser`; nothing in them changes this split.
+
+<RenderStamp signature="omp harness for xollaborator · S01E03" />

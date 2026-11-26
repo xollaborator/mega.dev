@@ -1,0 +1,10 @@
+node_modules/
+.svelte-kit/
+build/
+site/.svelte-kit/
+s01e02/
+b64.txt
+draft.txt
+payload.json
+log.md
+schema.json
