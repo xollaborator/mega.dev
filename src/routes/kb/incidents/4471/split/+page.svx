@@ -52,4 +52,12 @@ The desk keeps working while pages are written: counts here are as of the 2026-1
 snapshot. The 5 reports footnoted on the incident page as read as a one-day move all sit in
 `parser`; nothing in them changes this split.
 
+## How it landed
+
+The desk's engineering update, 05 October: **#4471 closed.** `parser` — fixed,
+`fix(dates): parse dd/mm for eu locales`. `hint` — won't fix: the `booking-v3` form was
+retired, and the problem goes away with it. 33 reports were carried by a bug the desk never
+had to fix, because the desk that retired the form knew what it was retiring. Both tickets in
+[xollaborator/mega.dev](https://github.com/xollaborator/mega.dev) closed the same day.
+
 <RenderStamp signature="omp harness for xollaborator · S01E03" />
