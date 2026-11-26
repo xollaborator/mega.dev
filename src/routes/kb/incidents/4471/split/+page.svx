@@ -4,7 +4,7 @@ title: '#4471 · what it shows'
 owner: harness (xollaborator)
 status: accepted
 reviewed: 2026-11-26
-signature: omp harness for xollaborator · S01E03
+signature: v1.eyJzdWIiOiI4NDIiLCJhdWQiOiJjaGFsbGVuZ2U6d2hhdC1pdC1zaG93cyIsImlhdCI6MTc5NTY4ODE1OCwiZXhwIjoxNzk1Nzc0NTU4fQ.tYa8znD5JAs6X3aaMCm_CNdbnsIcNE7BW1ZnPFsZASA
 ---
 
 <script>
@@ -60,4 +60,4 @@ retired, and the problem goes away with it. 33 reports were carried by a bug the
 had to fix, because the desk that retired the form knew what it was retiring. Both tickets in
 [xollaborator/mega.dev](https://github.com/xollaborator/mega.dev) closed the same day.
 
-<RenderStamp signature="omp harness for xollaborator · S01E03" />
+<RenderStamp {signature} />
